@@ -1,0 +1,5 @@
+<p id="notice"><%= notice %></p>
+<% @equipment_items.each do |item| %>
+  <h1><%= item.category %></h1>
+  <p><%= item.description%></p>
+<% end %>
