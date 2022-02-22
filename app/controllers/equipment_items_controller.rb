@@ -22,7 +22,8 @@ class EquipmentItemsController < ApplicationController
   end
 
   private
+
   def item_params
-    params.require(:equipment_item).permit(:category, :description)
+    params.require(:equipment_item).permit(:category, :description, :photo)
   end
 end
