@@ -3,6 +3,10 @@ class EquipmentItemsController < ApplicationController
     @equipment_items = EquipmentItem.all
   end
 
+  def show
+    @equipment_item = EquipmentItem.find(params[:id])
+  end
+
   def new
     @equipment_item = EquipmentItem.new
   end
