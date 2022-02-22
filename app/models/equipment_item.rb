@@ -1,5 +1,6 @@
 class EquipmentItem < ApplicationRecord
   belongs_to :user
   has_one_attached :photo
-  validates :category, :description, presence: true
+  validates :description, presence: true
+  validates :category, inclusion: { in: %w[Skiing Snowboarding Accessories] }
 end
