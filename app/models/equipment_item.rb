@@ -1,4 +1,4 @@
 class EquipmentItem < ApplicationRecord
   belongs_to :user
-  validates :name, :description, presence: true
+  validates :category, :description, presence: true
 end
