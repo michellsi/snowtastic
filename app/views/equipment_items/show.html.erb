@@ -1,3 +1,13 @@
-<h1><%= @equipment_item.category %></h1>
-<p><%= @equipment_item.description%></p>
-<%= cl_image_tag @equipment_item.photo.key, height: 300, width: 400, crop: :fit %>
+<div class="item-container">
+
+  <div>
+    <%= cl_image_tag @equipment_item.photo.key, height: 300, width: 400, crop: :fit %>
+  </div>
+
+  <div>
+    <h1>Category: <%= @equipment_item.category %></h1>
+    <p>Description: <%= @equipment_item.description%></p>
+    <p>User: <%= @equipment_item.user.email %></p>
+    <%= link_to "Rent item", root_path, class: "btn btn-primary" %>
+  </div>
+</div>

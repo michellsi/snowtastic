@@ -1,6 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
 <div class="container p-4">
 <!--To Do: If user clicked on category on home, only list this category>
 iterate through strings equipment items or create new models for category -->
@@ -10,10 +9,8 @@ iterate through strings equipment items or create new models for category -->
       <div class="card-trip">
         <img src="<%= cl_image_path item.photo.key, crop: :fit %>" />
         <div class="card-trip-infos">
-          <div>
-            <h2><%= item.category %></h2>
-            <p>User: <%= item.user.email %></p>
-          </div>
+          <h2><%= item.category %></h2>
+          <p>User: <%= item.user.email %></p>
         </div>
       </div>
     <% end %>
