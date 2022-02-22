@@ -47,6 +47,19 @@
   width: 40px;
 }
 
+.item-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20x;
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .item-container {
+    flex-direction: column;
+  }
+}
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
