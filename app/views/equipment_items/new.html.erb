@@ -6,7 +6,8 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :category %>
+    <%= f.label :category %> <br>
+    <%= f.select :category, ["Select category", "Skiing" ,"Snowboarding","Accessories"] %>
     <%= f.input :description %>
     <%= f.input :photo, as: :file %>
   </div>
