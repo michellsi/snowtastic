@@ -16,17 +16,15 @@
           </li>
           <li class="nav-item">
             <%= link_to "Log out", "#", class: "nav-link" %>
-             <li class="nav-item dropdown">
+          </li>
+          <li class="nav-item dropdown">
             <%= image_tag "user.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My equipment", "#", class: "dropdown-item" %>
               <%= link_to "My bookings", "#", class: "dropdown-item" %>
             </div>
           </li>
-          </li>
               <%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          </li>
         <%# else %>
           <!--li class="nav-item"-->
             <%#= link_to "Log in", new_user_session_path, class: "nav-link" %>
