@@ -1,2 +1,3 @@
 <h1><%= @equipment_item.category %></h1>
 <p><%= @equipment_item.description%></p>
+<%= cl_image_tag @equipment_item.photo.key, height: 300, width: 400, crop: :fit %>
