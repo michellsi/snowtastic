@@ -1,6 +1,10 @@
 class EquipmentItemsController < ApplicationController
   def index
-    @equipment_items = EquipmentItem.all
+    if params[:category]
+      @equipment_items = EquipmentItem.where(category: params[:category])
+    else
+      @equipment_items = EquipmentItem.all
+    end
   end
 
   def show
