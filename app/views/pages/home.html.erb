@@ -1,4 +1,19 @@
 <%= render "shared/banner" %>
 
-
 <%= link_to "Skiing", equipment_items_path(category: "Skiing") %>
+<br>
+<div class="container p-2">
+  <h3>Please select your category to see results:</h3>
+  <br>
+  <div class="cards">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url "skiing-category.jpg" %>)">
+      Skiing
+    </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url "snowboarding-category.jpg" %>)">
+      Snowboarding
+    </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url "accessories.jpg" %>)">
+      Accessories
+    </div>
+  </div>
+</div>
