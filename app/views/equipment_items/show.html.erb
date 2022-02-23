@@ -8,6 +8,12 @@
     <h1>Category: <%= @equipment_item.category %></h1>
     <p>Description: <%= @equipment_item.description%></p>
     <p>User: <%= @equipment_item.user.email %></p>
-    <%= link_to "Rent item", root_path, class: "btn btn-primary" %>
+
+   <%= simple_form_for([@equipment_item, @booking]) do |f| %>
+      <%# <% f.association :equipment_item %>
+      <%= f.button :submit, "Rent item", class: "btn btn-ghost" %>
+  <% end %>
+
+
   </div>
 </div>
