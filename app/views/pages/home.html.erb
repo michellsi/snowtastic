@@ -1,8 +1,18 @@
 <body>
   <%= render "shared/banner" %>
   <br><br><br>
-  <div class="container p-2">
-    <div class="category-cards">
+
+  <div class="arrow">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+  </div>
+
+  <div class="container mt-5 p-2">
+
+  <h2 style="text-align: center;">Check it out</h2>
+    <div class="category-cards mt-3 mb-4">
       <%= link_to equipment_items_path(category: "Skiing"), class: 'card-category-link' do %>
         <div class="card-category text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url "skiing-category.jpg" %>)">
           Skiing
@@ -22,4 +32,5 @@
       <% end %>
     </div>
   </div>
+
 </body>
