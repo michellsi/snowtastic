@@ -6,11 +6,11 @@
 
   <div>
     <h1>Category: <%= @equipment_item.category.name %></h1>
-    <p>Description: <%= @equipment_item.description%></p>
+    <p class="text-with-line-breaks">Description: <%= @equipment_item.description%></p>
     <p>User: <%= @equipment_item.user.email %></p>
 
    <%= simple_form_for([@equipment_item, @booking]) do |f| %>
-      <%# <% f.association :equipment_item %>
+      <%= f.input :booking_date, as: :date, html5: true %>
       <%= f.button :submit, "Rent item", class: "btn btn-ghost" %>
   <% end %>
 

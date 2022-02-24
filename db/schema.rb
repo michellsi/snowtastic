@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2022_02_24_102726) do
     t.bigint "equipment_item_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "booking_date"
     t.index ["equipment_item_id"], name: "index_bookings_on_equipment_item_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
