@@ -18,3 +18,7 @@
   flex-direction: column;
   min-height: 100vh;
 }
+
+.text-with-line-breaks {
+  white-space: pre-wrap;
+}
