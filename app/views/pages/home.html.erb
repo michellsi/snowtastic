@@ -1,28 +1,25 @@
-<%= render "shared/banner" %>
+<body>
+  <%= render "shared/banner" %>
+  <br><br><br>
+  <div class="container p-2">
+    <div class="category-cards">
+      <%= link_to equipment_items_path(category: "Skiing"), class: 'card-category-link' do %>
+        <div class="card-category text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url "skiing-category.jpg" %>)">
+          Skiing
+        </div>
+      <% end %>
 
+      <%= link_to equipment_items_path(category: "Snowboarding"), class: 'card-category-link' do %>
+        <div class="card-category text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url "snowboarding-category.jpg" %>)">
+          Snowboarding
+        </div>
+      <% end %>
 
-<br><br><br>
-
-<div class="container p-2">
-  <div class="cards">
-    <%= link_to equipment_items_path(category: "Skiing"), class: 'card-link' do %>
-      <div class="card-category text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url "skiing-category.jpg" %>)">
-        Skiing
-      </div>
-    <% end %>
-
-    <%= link_to equipment_items_path(category: "Snowboarding"), class: 'card-link' do %>
-      <div class="card-category text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url "snowboarding-category.jpg" %>)">
-        Snowboarding
-      </div>
-    <% end %>
-
-    <%= link_to equipment_items_path(category: "Accessories"), class: 'card-link' do %>
-      <div class="card-category text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url "accessories.jpg" %>)">
-        Accessories
-      </div>
-    <% end %>
+      <%= link_to equipment_items_path(category: "Accessories"), class: 'card-category-link' do %>
+        <div class="card-category text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url "accessories.jpg" %>)">
+          Accessories
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
-
-<br><br><br><br><br>
+</body>
