@@ -12,6 +12,10 @@ user3 = User.create(email: "lisa@lisa.com", password: "lisa123", first_name: "Li
 user4 = User.create(email: "nick@nick.com", password: "nick123", first_name: "Nick", last_name: "Sun")
 user5 = User.create(email: "kurt@kurt.com", password: "kurt123", first_name: "Kurt", last_name: "Cloud")
 
+Category.create(name: "Skiing")
+Category.create(name: "Snowboarding")
+Category.create(name: "Accessories")
+
 # equip1 = EquipmentItem.new(category: "Skiing", description: "These are skis", user_id: user1.id)
 # equip1.photo.attach(io: URI.open('https://res.cloudinary.com/dbzj7fllo/image/upload/v1645545011/development/nqsnu3u05f3atnbvdw5m21ckiw6o.jpg'),
 #                     filename: 'skis.jpg', content_type: 'image/png')
