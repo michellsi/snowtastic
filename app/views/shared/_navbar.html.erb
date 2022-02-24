@@ -18,7 +18,13 @@
             <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <% if current_user.avatar.attached? %>
+            <%= image_tag current_user.avatar, class: "avatar dropdown-toggle" %>
+            <% else %>
+            <%= image_tag "user.png", class: "avatar dropdown-toggle" %>
+            <% end %>
+          </div>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My equipment", "#", class: "dropdown-item" %>
               <%= link_to "My bookings", bookings_path, class: "dropdown-item" %>
