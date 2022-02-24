@@ -8,8 +8,8 @@ iterate through strings equipment items or create new models for category -->
         <div class="card-trip">
           <img src="<%= cl_image_path item.photo.key, crop: :fit %>" />
           <div class="card-trip-infos">
-            <h2>See more info...</h2>
-            <p>User: <%= item.user.email %></p>
+            <h2><%= item.title %></h2>
+            <h3><%= number_to_currency(item.price) %></h3>
           </div>
         </div>
       <% end %>
