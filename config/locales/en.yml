@@ -31,3 +31,10 @@
 
 en:
   hello: "Hello world"
+  product_price: "%{price} €"
+  number:
+    currency:
+      format:
+        format: "%n %u"
+        unit: "€"
+        precision: 2
