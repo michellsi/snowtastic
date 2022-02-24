@@ -1,7 +1,6 @@
 <div class="container">
 <h2>Bookings</h2>
 
-
 <div class="cards p-3">
     <% @bookings.each do |b| %>
       <div class="card-trip">
@@ -10,6 +9,7 @@
           <p><strong>Booked by:</strong> <%= b.user.email %></p>
           <p><strong>Category:</strong> <%= b.equipment_item.category %></p>
           <p><strong>Owner:</strong> <%= b.equipment_item.user.email  %></p>
+          <p><strong>Booking Date: </strong> <%= b.booking_date.strftime('%d-%m-%Y') %></p>
         </div>
       </div>
     <% end %>

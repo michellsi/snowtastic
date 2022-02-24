@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @booking.equipment_item = @equipment_item
     @booking.user = current_user
+    @booking.booking_date = strong_params[:booking_date]
 
     @booking.save
 
@@ -21,6 +22,9 @@ class BookingsController < ApplicationController
 
   private
 
+  def strong_params
+    params.require(:booking).permit(:booking_date)
+  end
   def find_item
     @equipment_item = EquipmentItem.find(params[:equipment_item_id])
   end
