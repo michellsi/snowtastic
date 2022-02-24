@@ -1,0 +1,55 @@
+<div class="container p-3">
+  <h1>My Profile</h1>
+  <br>
+  <div class="dashboard row">
+    <div class="actions col-lg-4 col-sm-12">
+      <h3>My bookings</h3>
+      <p>Foreign equipment I booked from another user.</p>
+      <% @bookings.each do |item| %>
+        <%= link_to item.equipment_item, style: "text-decoration: none;" do %>
+          <div class="card-product">
+            <img src="<%= cl_image_path item.equipment_item.photo.key, crop: :fit %>" />
+            <div class="card-product-infos">
+              <h2><%= item.equipment_item.category %></h2>
+              <p>Booked from:<br> <%= item.equipment_item.user.email %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="actions col-lg-4 col-sm-12">
+      <h2>My equipment</h2>
+      <p>My equipment that is available for rent.</p>
+      <% @equipment_items.each do |item| %>
+          <%= link_to equipment_item_path(item), style: "text-decoration: none;" do %>
+            <div class="card-product p-2">
+              <img src="<%= cl_image_path item.photo.key, crop: :fit %>" />
+              <div class="card-product-infos">
+                <h2><%= item.category %></h2>
+                <p><%= item.description %></p>
+              </div>
+            </div>
+          <% end %>
+      <% end %>
+    </div>
+
+    <div class="actions col-lg-4 col-sm-12">
+      <h2>Rented items</h2>
+      <p>My equipment which is currently booked.</p>
+        <% @equipment_items.each do |item| %>
+          <% unless item.bookings.empty? %>
+          <%= link_to item, style: "text-decoration: none;" do %>
+              <div class="card-product">
+                <img src="<%= cl_image_path item.photo.key, crop: :fit %>" />
+                <div class="card-product-infos">
+                  <h2><%= item.category %></h2>
+                  <p>Booked by:<br> <%= item.bookings.last.user.email %></p>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
+</div>
