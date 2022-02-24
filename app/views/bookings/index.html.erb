@@ -7,7 +7,7 @@
          <img src="<%= cl_image_path b.equipment_item.photo.key, crop: :fit %>" />
         <div class="card-trip-infos">
           <p><strong>Booked by:</strong> <%= b.user.email %></p>
-          <p><strong>Category:</strong> <%= b.equipment_item.category %></p>
+          <p><strong>Category:</strong> <%= b.equipment_item.category.name %></p>
           <p><strong>Owner:</strong> <%= b.equipment_item.user.email  %></p>
           <p><strong>Booking Date: </strong> <%= b.booking_date.strftime('%d-%m-%Y') %></p>
         </div>
