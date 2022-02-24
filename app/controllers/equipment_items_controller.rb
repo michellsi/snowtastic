@@ -1,7 +1,7 @@
 class EquipmentItemsController < ApplicationController
   def index
     if params[:category]
-      @equipment_items = EquipmentItem.where(category: params[:category])
+      @equipment_items = EquipmentItem.joins(:category).where(category: { name: params[:category] })
     else
       @equipment_items = EquipmentItem.all
     end
@@ -29,6 +29,6 @@ class EquipmentItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:equipment_item).permit(:category, :description, :photo)
+    params.require(:equipment_item).permit(:description, :photo, :category_id)
   end
 end
