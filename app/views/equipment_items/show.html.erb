@@ -6,9 +6,9 @@
 
   <div>
     <h1><%= @equipment_item.title %></h1>
-    <p>Price: <%= number_to_currency(@equipment_item.price) %></p>
-    <p>Location: <%= @equipment_item.location %></p>
-    <p>User: <%= @equipment_item.user.email %></p>
+        <%= number_to_currency(@equipment_item.price) %></p>
+        <p><i class="fas fa-map-pin"></i> <%= @equipment_item.location %></p>
+        <p><i class="fas fa-user"></i> <%= @equipment_item.user.email %></p>
     <div class="border-top border-bottom border-3">
       <p class="text-with-line-breaks mt-3"><%= @equipment_item.description%></p>
     </div>
@@ -17,8 +17,6 @@
       <%= f.input :booking_date, as: :date, html5: true %>
       <%= f.button :submit, "Rent item", class: "btn btn-ghost" %>
   <% end %>
-
-
   </div>
 
   <li class="icon-item">
