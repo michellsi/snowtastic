@@ -2,7 +2,7 @@
 <!--To Do: If user clicked on category on home, only list this category>
 iterate through strings equipment items or create new models for category -->
 
-  <div class="cards">
+  <div style="position: relative;" class="cards">
     <% @equipment_items.each do |item| %>
       <%= link_to item, style: "text-decoration: none;" do %>
         <div class="card-trip">
@@ -15,4 +15,9 @@ iterate through strings equipment items or create new models for category -->
       <% end %>
     <% end %>
   </div>
+  <li class="icon-item">
+    <div style="text-decoration: none;"><%= link_to :back do %>
+      <i class="icon-link"><i class="fas fa-arrow-left" ></i></i>
+    <% end %></div>
+  </li>
 </div>
