@@ -1,8 +1,8 @@
 class BookingsController < ApplicationController
-  before_action :find_item, only: [:new, :create]
+  before_action :find_item, only: %i[new create]
 
-  def index
-    @bookings = Booking.all
+  def show
+    @booking = Booking.find(params[:id])
   end
 
   def new
@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
 
     @booking.save
 
-    redirect_to bookings_path
+    redirect_to @booking
   end
 
   private
@@ -25,6 +25,7 @@ class BookingsController < ApplicationController
   def strong_params
     params.require(:booking).permit(:booking_date)
   end
+
   def find_item
     @equipment_item = EquipmentItem.find(params[:equipment_item_id])
   end

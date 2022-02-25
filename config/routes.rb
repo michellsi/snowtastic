@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :equipment_items, except: :destroy do
     resources :bookings, only: :create
   end
-  resources :bookings, only: :index
+  resources :bookings, only: :show
   resources :dashboard, only: :index
 end
