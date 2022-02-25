@@ -1,7 +1,7 @@
 <div class="actions">
   <p>Equipment I booked from another user.</p>
   <% bookings.each do |item| %>
-    <%= link_to item.equipment_item, style: "text-decoration: none;" do %>
+    <%= link_to item, style: "text-decoration: none;" do %>
       <div class="card-product">
         <img src="<%= cl_image_path item.equipment_item.photo.key, crop: :fit %>" />
         <div class="card-product-infos">
