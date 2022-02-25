@@ -1,7 +1,13 @@
+<div class="container index-head", style="text-align: center">
+  <% if params[:category] %>
+    <h1><%= params[:category] %></h1>
+  <% else %>
+    <h1>All available items</h1>
+  <% end %>
+</div>
 <div class="container p-4">
 <!--To Do: If user clicked on category on home, only list this category>
 iterate through strings equipment items or create new models for category -->
-
   <div style="position: relative;" class="cards">
     <% @equipment_items.each do |item| %>
       <%= link_to item, style: "text-decoration: none;" do %>
