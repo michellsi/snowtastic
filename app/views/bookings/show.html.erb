@@ -9,7 +9,7 @@
   </div>
 
   <div>
-    <div>Booked from:
+    <div>Owner:
       <%= @booking.equipment_item.user.first_name %>
       <% if @booking.equipment_item.user.avatar.attached? %>
         <%= image_tag @booking.equipment_item.user.avatar, class: "avatar" %>
@@ -17,7 +17,6 @@
         <%= image_tag "user.png", class: "avatar" %>
       <% end %>
     </div>
-
 
     <p class="mt-1">Location: <%= @booking.equipment_item.location %></p>
     <p class="mt-3">Booking date: <%= @booking.booking_date.strftime('%d-%m-%Y')  %></p>
@@ -27,7 +26,15 @@
       <p class="text-with-line-breaks mt-3"><%= @booking.equipment_item.description%></p>
     </div>
 
-    <br>
+    <div class="mt-2">
+    Booked by:
+      <%= @booking.user.first_name %>
+      <% if @booking.user.avatar.attached? %>
+        <%= image_tag @booking.user.avatar, class: "avatar" %>
+      <% else %>
+        <%= image_tag "user.png", class: "avatar" %>
+      <% end %>
+    </div>
   </div>
 
 </div>
