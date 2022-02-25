@@ -12,7 +12,7 @@
   <div class="container mt-5 p-2">
 
     <h2 style="text-align: center; margin-bottom: 15px;">Check it out</h2>
-    <div style="display: flex; justify-content: center;"><%= link_to "See all items", equipment_items_path, class: "btn btn-primary"%></div>
+    <div style="display: flex; justify-content: center;"><%= link_to "See all items", equipment_items_path, class: "btn btn-ghost"%></div>
     <div class="category-cards mt-4 mb-5">
       <%= link_to equipment_items_path(category: "Skiing"), class: 'card-category-link' do %>
         <div class="card-category text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_url "skiing-category.jpg" %>)">
