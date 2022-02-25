@@ -25,6 +25,7 @@
   width: 120px;
   object-fit: scale-down;
   height: 100px;
+  padding-left: 10px;
 }
 
 .card-product h2 {
@@ -34,13 +35,16 @@
 }
 
 .card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
+  font-size: 14px;
+  margin-bottom: 8px;
   margin-top: 8px;
 }
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.card-product-infos h3 {
+  font-size: 15px;
+  margin: 0;
 }

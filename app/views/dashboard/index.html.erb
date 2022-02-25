@@ -1,55 +1,25 @@
-<div class="container p-3">
-  <h1>My Profile</h1>
-  <br>
-  <div class="dashboard row">
-    <div class="actions col-lg-4 col-sm-12">
-      <h3>My bookings</h3>
-      <p>Foreign equipment I booked from another user.</p>
-      <% @bookings.each do |item| %>
-        <%= link_to item.equipment_item, style: "text-decoration: none;" do %>
-          <div class="card-product">
-            <img src="<%= cl_image_path item.equipment_item.photo.key, crop: :fit %>" />
-            <div class="card-product-infos">
-              <h2><%= item.equipment_item.category %></h2>
-              <p>Booked from:<br> <%= item.equipment_item.user.email %></p>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
+<div class="container">
+  <h1>My Dashboard</h1>
+   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Bookings</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">My equipment</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Rentals</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+        <%= render "bookings", bookings: @bookings %>
     </div>
-
-    <div class="actions col-lg-4 col-sm-12">
-      <h2>My equipment</h2>
-      <p>My equipment that is available for rent.</p>
-      <% @equipment_items.each do |item| %>
-          <%= link_to equipment_item_path(item), style: "text-decoration: none;" do %>
-            <div class="card-product p-2">
-              <img src="<%= cl_image_path item.photo.key, crop: :fit %>" />
-              <div class="card-product-infos">
-                <h2><%= item.category %></h2>
-                <p><%= item.description %></p>
-              </div>
-            </div>
-          <% end %>
-      <% end %>
+    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+        <%= render "my_equipment", equipment_items: @equipment_items %>
     </div>
-
-    <div class="actions col-lg-4 col-sm-12">
-      <h2>Rented items</h2>
-      <p>My equipment which is currently booked.</p>
-        <% @equipment_items.each do |item| %>
-          <% unless item.bookings.empty? %>
-          <%= link_to item, style: "text-decoration: none;" do %>
-              <div class="card-product">
-                <img src="<%= cl_image_path item.photo.key, crop: :fit %>" />
-                <div class="card-product-infos">
-                  <h2><%= item.category %></h2>
-                  <p>Booked by:<br> <%= item.bookings.last.user.email %></p>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-        <% end %>
+    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+    <%= render "rented_items", rentals: @rentals %>
     </div>
   </div>
 </div>

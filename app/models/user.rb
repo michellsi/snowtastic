@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :equipment_items
   has_many :bookings
+  # rentals of my equipment items
+  has_many :rentals, through: :equipment_items, source: :bookings
 
   has_one_attached :avatar
 end
