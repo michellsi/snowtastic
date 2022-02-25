@@ -1,11 +1,11 @@
 require "open-uri"
 
-puts "deleting old records"
+puts "Deleting old records"
 Booking.destroy_all
 EquipmentItem.destroy_all
 Category.destroy_all
 User.destroy_all
-puts "done"
+puts "All done deleting old records"
 
 # User seeds
 puts "Creating users"
@@ -16,13 +16,13 @@ user4 = User.create!(email: "nick@nick.com", password: "nick123", first_name: "N
 user5 = User.create!(email: "kurt@kurt.com", password: "kurt123", first_name: "Kurt", last_name: "Cloud")
 
 # Category seeds
-puts "creating categories"
+puts "Creating categories"
 cat1 = Category.create!(name: "Skiing")
 cat2 = Category.create!(name: "Snowboarding")
 cat3 = Category.create!(name: "Accessories")
 
 # Equipment Item seeds
-puts "creating equipment items"
+puts "Creating equipment items"
 equip1 = EquipmentItem.new(category: cat1, title: "Men's Skis",
                            price: 16.25, location: "Munich", user_id: user1.id,
                            description: "These are skis")
@@ -58,13 +58,14 @@ equip6 = EquipmentItem.new(category: cat3, title: "Womans Ski Goggles",
                            description: "these are some awesome goggles to take skiing")
 equip6.photo.attach(io: URI.open('https://res.cloudinary.com/dbzj7fllo/image/upload/v1645706772/development/02pmdkw9ng8j2u1qgt6r37w2vyuw.jpg'),
                     filename: 'goggles.jpg', content_type: 'image/png')
+equip6.save!
 
 # Booking seeds
-puts "creating bookings"
+puts "Creating bookings"
 Booking.create!(user_id: user5.id, equipment_item_id: equip2.id, booking_date: Date.today)
 Booking.create!(user_id: user3.id, equipment_item_id: equip3.id, booking_date: Date.today)
 Booking.create!(user_id: user2.id, equipment_item_id: equip5.id, booking_date: Date.today)
 Booking.create!(user_id: user1.id, equipment_item_id: equip1.id, booking_date: Date.today)
 Booking.create!(user_id: user4.id, equipment_item_id: equip4.id, booking_date: Date.today)
 
-puts 'all done seeding'
+puts 'All done seeding'
