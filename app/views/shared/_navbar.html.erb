@@ -26,8 +26,7 @@
             <% end %>
           </div>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "My equipment", "#", class: "dropdown-item" %>
-              <%# <%= link_to "My bookings", bookings_path, class: "dropdown-item" %>
+              <%= link_to "Dashboard", dashboard_index_path, class: "dropdown-item" %>
               <%= link_to "Add Item", new_equipment_item_path, class: "dropdown-item" %>
               <%= link_to "See all items", equipment_items_path, class: "dropdown-item" %>
             </div>
