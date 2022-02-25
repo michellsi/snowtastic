@@ -7,4 +7,5 @@ class EquipmentItem < ApplicationRecord
 
   validates :photo, :title, :location, :price, :category, presence: true
   validates :description, presence: true
+  validates :title, length: { in: 5..20 }
 end
