@@ -1,0 +1,66 @@
+:root {
+  --color-icon: $blue;
+  --social-icon1: $blue;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;;
+}
+
+.icon-item {
+  list-style: none;
+  position: absolute;
+  top: 72%;
+  left: 1%;
+}
+
+.icon-link {
+  display: inline-flex;
+  font-size: 3rem;
+  text-decoration: none;
+  color: var(--color-icon);
+  width: 6rem;
+  height: 6rem;
+  transition: .5s linear;
+  position: relative;
+  z-index: 1;
+  margin: auto;
+  color: $blue;
+}
+
+.icon-link:hover {
+  color: #fff;
+}
+
+.icon-link i {
+  margin: auto;
+}
+
+.icon-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 6rem;
+  height: 6rem;
+  background: $blue;
+  border-radius: 50%;
+  z-index: -1;
+  transform: scale(0);
+  transition: 0.3s cubic-bezier(.95, .32, .37, 1.21);
+}
+
+.icon-link:hover::before {
+  transform: scale(0.75);
+}
+
+.icon-item:nth-child(1) a:hover:before {
+  background: var(--social-icon1);
+}
