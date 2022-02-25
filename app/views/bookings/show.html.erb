@@ -26,7 +26,15 @@
       <p class="text-with-line-breaks mt-3"><%= @booking.equipment_item.description%></p>
     </div>
 
-    <br>
+    <div class="mt-2">
+    Booked by:
+      <%= @booking.user.first_name %>
+      <% if @booking.user.avatar.attached? %>
+        <%= image_tag @booking.user.avatar, class: "avatar" %>
+      <% else %>
+        <%= image_tag "user.png", class: "avatar" %>
+      <% end %>
+    </div>
   </div>
 
 </div>
