@@ -1,7 +1,7 @@
 <div class="actions">
   <p>My equipment which is currently booked.</p>
     <% rentals.each do |rental| %>
-      <%= link_to rental.equipment_item, style: "text-decoration: none;" do %>
+      <%= link_to rental, style: "text-decoration: none;" do %>
         <div class="card-product">
           <img src="<%= cl_image_path rental.equipment_item.photo.key, crop: :fit %>">
           <div class="card-product-infos">
