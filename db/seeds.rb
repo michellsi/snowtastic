@@ -10,10 +10,20 @@ puts "All done deleting old records"
 # User seeds
 puts "Creating users"
 user1 = User.create!(email: "bob@bob.com", password: "bob123", first_name: "Bob", last_name: "Doe")
+user1.avatar.attach(io: URI.open('https://res.cloudinary.com/dbzj7fllo/image/upload/v1645790349/development/male_d9m7gk.jpg'),
+filename: 'avatar1.jpg', content_type: 'image/png')
 user2 = User.create!(email: "tod@tod.com", password: "tod123", first_name: "Tod", last_name: "Sue")
+user2.avatar.attach(io: URI.open('https://res.cloudinary.com/dbzj7fllo/image/upload/v1645790517/development/NY9hnAbp_fc5umz.jpg'),
+filename: 'avatar1.jpg', content_type: 'image/png')
 user3 = User.create!(email: "lisa@lisa.com", password: "lisa123", first_name: "Lisa", last_name: "Moon")
+user3.avatar.attach(io: URI.open('https://res.cloudinary.com/dbzj7fllo/image/upload/v1645790349/development/female2_esrwlh.jpg'),
+filename: 'avatar1.jpg', content_type: 'image/png')
 user4 = User.create!(email: "nick@nick.com", password: "nick123", first_name: "Nick", last_name: "Sun")
+user4.avatar.attach(io: URI.open('https://res.cloudinary.com/dbzj7fllo/image/upload/v1645790517/development/86_cyfljg.jpg'),
+filename: 'avatar1.jpg', content_type: 'image/png')
 user5 = User.create!(email: "kurt@kurt.com", password: "kurt123", first_name: "Kurt", last_name: "Cloud")
+user5.avatar.attach(io: URI.open('https://res.cloudinary.com/dbzj7fllo/image/upload/v1645790517/development/AW-rdWlG_ag3u6f.jpg'),
+filename: 'avatar1.jpg', content_type: 'image/png')
 
 # Category seeds
 puts "Creating categories"
@@ -32,7 +42,7 @@ equip1.save
 equip2 = EquipmentItem.new(category: cat2, title: "Woman's Snowboard",
                            price: 10.00, location: "Sarnen", user_id: user1.id,
                            description: "This is a snowboard")
-equip2.photo.attach(io: URI.open('https://res.cloudinary.com/dbzj7fllo/image/upload/v1645714410/development/m8txcfa2ticak8qtfckq4jh7mio1.jpg'),
+equip2.photo.attach(io: URI.open('https://res.cloudinary.com/dbzj7fllo/image/upload/v1645716139/development/wjg5mly7d25k5lm1yg8zd1485jdg.jpg'),
                     filename: 'snowboard.jpg', content_type: 'image/png')
 equip2.save!
 equip3 = EquipmentItem.new(category: cat3, title: "Womans Helmet",
