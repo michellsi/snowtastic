@@ -6,8 +6,8 @@
         <img src="<%= cl_image_path item.equipment_item.photo.key, crop: :fit %>" />
         <div class="card-product-infos">
           <h2><%= item.equipment_item.title %></h2>
-          <p><strong>Booked from:</strong> <%= item.equipment_item.user.email %></p>
-          <h3 class="price"><%= item.equipment_item.price %> € per day</h3>
+          <p><strong>Booked from:</strong> <%= item.equipment_item.user.first_name %></p>
+          <h3 class="price"><%= number_to_currency(item.equipment_item.price) %> per day</h3>
         </div>
       </div>
     <% end %>
