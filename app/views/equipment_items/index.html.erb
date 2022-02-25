@@ -9,12 +9,19 @@ iterate through strings equipment items or create new models for category -->
           <img src="<%= cl_image_path item.photo.key, crop: :fit %>" />
           <div class="card-trip-infos">
             <h2><%= item.title %></h2>
-            <h3><%= number_to_currency(item.price) %></h3>
+            <h3><%= number_to_currency(item.price) %> per day</h3>
+            <div style="position: absolute; right: 4%; bottom: 377%;">
+              <% if item.user.avatar.attached? %>
+                <%= image_tag item.user.avatar, class: "avatar" %>
+              <% else %>
+                <%= image_tag "user.png", class: "avatar" %>
+              <% end %></div>
           </div>
         </div>
       <% end %>
     <% end %>
   </div>
+
   <li class="icon-item">
     <div style="text-decoration: none;"><%= link_to :back do %>
       <i class="icon-link"><i class="fas fa-arrow-left" ></i></i>
