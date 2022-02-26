@@ -14,20 +14,21 @@
     </div>
     <br>
 
-  <% if @equipment_item.user == current_user %>
-  <%= link_to "Delete", equipment_item_path(@equipment_item), class: "btn btn-ghost", method: :delete, data: { confirm: "Are you sure you want to delete this item?"} %>
-  <% else %>
-   <%= simple_form_for([@equipment_item, @booking]) do |f| %>
-      <%= f.input :booking_date, as: :date, html5: true %>
-      <%= f.button :submit, "Rent item", class: "btn btn-ghost" %>
-  <% end %>
-  <% end %>
-
+    <% if @equipment_item.user == current_user %>
+      <%= link_to "Delete", equipment_item_path(@equipment_item), class: "btn btn-ghost", method: :delete, data: { confirm: "Are you sure you want to delete this item?"} %>
+    <% else %>
+      <%= simple_form_for([@equipment_item, @booking]) do |f| %>
+        <%= f.input :booking_date, as: :date, html5: true %>
+        <%= f.button :submit, "Rent item", class: "btn btn-ghost" %>
+      <% end %>
+    <% end %>
   </div>
 
   <li class="icon-item">
-    <div style="text-decoration: none;"><%= link_to :back do %>
-      <i class="icon-link"><i class="fas fa-arrow-left" ></i></i>
-    <% end %></div>
+    <div style="text-decoration: none;">
+      <%= link_to :back do %>
+        <i class="icon-link"><i class="fas fa-arrow-left" ></i></i>
+      <% end %>
+    </div>
   </li>
 </div>
