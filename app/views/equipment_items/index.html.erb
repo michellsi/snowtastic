@@ -5,9 +5,9 @@
     <h1>All available items</h1>
   <% end %>
 </div>
+
 <div class="container p-4">
-<!--To Do: If user clicked on category on home, only list this category>
-iterate through strings equipment items or create new models for category -->
+
   <div style="position: relative;" class="cards">
     <% @equipment_items.each do |item| %>
       <%= link_to item, style: "text-decoration: none;" do %>
@@ -21,7 +21,8 @@ iterate through strings equipment items or create new models for category -->
                 <%= image_tag item.user.avatar, class: "avatar" %>
               <% else %>
                 <%= image_tag "user.png", class: "avatar" %>
-              <% end %></div>
+              <% end %>
+            </div>
           </div>
         </div>
       <% end %>
@@ -29,8 +30,10 @@ iterate through strings equipment items or create new models for category -->
   </div>
 
   <li class="icon-item">
-    <div style="text-decoration: none;"><%= link_to :back do %>
-      <i class="icon-link"><i class="fas fa-arrow-left" ></i></i>
-    <% end %></div>
+    <div style="text-decoration: none;">
+      <%= link_to :back do %>
+        <i class="icon-link"><i class="fas fa-arrow-left" ></i></i>
+      <% end %>
+    </div>
   </li>
 </div>

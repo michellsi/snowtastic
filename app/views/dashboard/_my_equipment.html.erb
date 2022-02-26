@@ -1,19 +1,19 @@
 <div class="actions">
   <p>My equipment that is available for rent.</p>
   <% equipment_items.each do |item| %>
-      <%= link_to equipment_item_path(item), style: "text-decoration: none;" do %>
-        <div class="card-product p-2">
-          <img src="<%= cl_image_path item.photo.key, crop: :fit %>">
-          <div class="card-product-infos">
-            <div>
-              <h2><%= item.title %></h2>
-              <p><%= item.description %></p>
-            </div>
-            <div>
-             <h3><%= number_to_currency(item.price) %> per day</h3>
-            </div>
+    <%= link_to equipment_item_path(item), style: "text-decoration: none;" do %>
+      <div class="card-product p-2">
+        <img src="<%= cl_image_path item.photo.key, crop: :fit %>">
+        <div class="card-product-infos">
+          <div>
+            <h2><%= item.title %></h2>
+            <p><%= item.description %></p>
+          </div>
+          <div>
+            <h3><%= number_to_currency(item.price) %> per day</h3>
           </div>
         </div>
-      <% end %>
+      </div>
+    <% end %>
   <% end %>
 </div>

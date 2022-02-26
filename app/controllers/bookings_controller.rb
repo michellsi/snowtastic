@@ -15,9 +15,11 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.booking_date = strong_params[:booking_date]
 
-    @booking.save
-
-    redirect_to @booking
+    if @booking.save
+      redirect_to @booking, notice: 'Booking was successfully created'
+    else
+      render :new
+    end
   end
 
   private

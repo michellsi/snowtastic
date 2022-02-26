@@ -62,30 +62,26 @@
   padding: 20x;
 }
 
+@media (min-width: 100px) and (max-width: 575px) {
+  .item-container {
+    flex-direction: column;
+  }
+}
+
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   body {
     overflow-x: hidden !important;
   }
-  .container {
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-  }
   .cards {
     grid-template-columns: 1fr;
-  }
-  .item-container {
-    flex-direction: column;
   }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   body {
-    overflow-x: hidden !important;
-  }
-  .container {
-    max-width: 100% !important;
     overflow-x: hidden !important;
   }
   .cards {
@@ -98,10 +94,6 @@
   body {
     overflow-x: hidden !important;
   }
-  .container {
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-  }
   .cards {
     grid-template-columns: 1fr 1fr;
   }
@@ -112,10 +104,6 @@
   body {
     overflow-x: hidden !important;
   }
-  .container {
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-  }
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -124,10 +112,6 @@
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   body {
-    overflow-x: hidden !important;
-  }
-  .container {
-    max-width: 100% !important;
     overflow-x: hidden !important;
   }
   .cards {
