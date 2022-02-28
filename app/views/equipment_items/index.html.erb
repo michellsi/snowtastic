@@ -6,28 +6,7 @@
   <% end %>
 </div>
 <div class="container p-4">
-<!--To Do: If user clicked on category on home, only list this category>
-iterate through strings equipment items or create new models for category -->
-  <div style="position: relative;" class="cards">
-    <% @equipment_items.each do |item| %>
-      <%= link_to item, style: "text-decoration: none;" do %>
-        <div class="card-trip">
-          <img src="<%= cl_image_path item.photo.key, crop: :fit %>" />
-          <div class="card-trip-infos">
-            <h2><%= item.title %></h2>
-            <h3><%= number_to_currency(item.price) %> per day</h3>
-            <div style="position: absolute; right: 4%; bottom: 377%;">
-              <% if item.user.avatar.attached? %>
-                <%= image_tag item.user.avatar, class: "avatar" %>
-              <% else %>
-                <%= image_tag "user.png", class: "avatar" %>
-              <% end %></div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-
+  <%= render "shared/equipshow" %>
   <li class="icon-item">
     <div style="text-decoration: none;"><%= link_to :back do %>
       <i class="icon-link"><i class="fas fa-arrow-left" ></i></i>
