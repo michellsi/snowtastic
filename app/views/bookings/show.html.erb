@@ -3,13 +3,13 @@
 </div>
 
 <div class="item-container mt-5">
-
   <div>
     <%= cl_image_tag @booking.equipment_item.photo.key, height: 300, width: 400, crop: :fit %>
   </div>
 
   <div>
-    <div>Owner:
+    <div>
+      Owner:
       <%= @booking.equipment_item.user.first_name %>
       <% if @booking.equipment_item.user.avatar.attached? %>
         <%= image_tag @booking.equipment_item.user.avatar, class: "avatar" %>
@@ -27,7 +27,7 @@
     </div>
 
     <div class="mt-2">
-    Booked by:
+      Booked by:
       <%= @booking.user.first_name %>
       <% if @booking.user.avatar.attached? %>
         <%= image_tag @booking.user.avatar, class: "avatar" %>

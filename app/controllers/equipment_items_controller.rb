@@ -20,7 +20,7 @@ class EquipmentItemsController < ApplicationController
     @equipment_item = EquipmentItem.new(item_params)
     @equipment_item.user = current_user
     if @equipment_item.save
-      redirect_to @equipment_item, notice: 'item was successfully created'
+      redirect_to @equipment_item, notice: 'Item was successfully created'
     else
       render :new
     end
