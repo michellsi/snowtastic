@@ -10,9 +10,9 @@
     </div>
   </a>
 
-  <div class="container mt-5 p-2">
+  <div class="container mt-2 p-2">
 
-    <h2 style="text-align: center; margin-bottom: 15px;">Check it out</h2>
+    <h2 class="title">Check it out</h2>
     <div style="display: flex; justify-content: center;"><%= link_to "See all items", equipment_items_path, class: "btn btn-ghost"%></div>
     <div id="home-cards" class="category-cards mt-4 mb-5">
       <%= link_to equipment_items_path(category: "Skiing"), class: 'card-category-link' do %>
@@ -33,6 +33,13 @@
         </div>
       <% end %>
     </div>
+  </div>
+
+  <div class="container border-top border-bottom border-3">
+    <h2 class="title">Here are some of the avalable items</h2>
+  </div>
+  <div class="container my-5 p-2">
+    <%= render "shared/equipshow" %>
   </div>
 
 </body>
