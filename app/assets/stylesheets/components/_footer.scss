@@ -3,10 +3,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 75px;
   padding: 0px 50px;
   color: #fffdf7d5;
   width: 100%;
+  margin-top: auto;
 }
 .footer-links {
   display: flex;
@@ -24,4 +25,17 @@
 }
 .footer .fa-heart {
   color: #D23333;
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .footer {
+    padding: 0px 15px;
+  }
+  .footer-links a {
+    font-size: 20px;
+  }
+  .footer-copyright {
+    font-size: 15px;
+    text-align: end;
+  }
 }

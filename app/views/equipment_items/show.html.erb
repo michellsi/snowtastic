@@ -1,4 +1,4 @@
-<div class="item-container">
+<div class="item-container mb-3">
 
   <div>
     <%= cl_image_tag @equipment_item.photo.key, height: 300, width: 400, crop: :fit %>
@@ -23,12 +23,4 @@
       <% end %>
     <% end %>
   </div>
-
-  <li class="icon-item">
-    <div style="text-decoration: none;">
-      <%= link_to :back do %>
-        <i class="icon-link"><i class="fas fa-arrow-left" ></i></i>
-      <% end %>
-    </div>
-  </li>
 </div>
