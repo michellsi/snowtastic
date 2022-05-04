@@ -164,3 +164,39 @@
   text-decoration: none;
   color: $background-color;
 }
+
+/*Media Queries*/
+
+/*Smallest device*/
+@media (min-width: 100px) and (max-width: 575px) {
+  .category-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .category-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .category-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 992px) {
+  .category-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 1200px) {
+  .category-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
