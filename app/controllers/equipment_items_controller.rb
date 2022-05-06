@@ -1,4 +1,6 @@
 class EquipmentItemsController < ApplicationController
+  skip_before_action :authenticate_user!
+  
   def index
     if params[:category]
       @equipment_items = EquipmentItem.joins(:category).where(category: { name: params[:category] })
